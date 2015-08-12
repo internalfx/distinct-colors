@@ -1,12 +1,8 @@
 
-var _ = {
-  merge: require('lodash.merge'),
-  cloneDeep: require('lodash.clonedeep'),
-  isEqual: require('lodash.isequal'),
-  sum: require('lodash.sum'),
-  random: require('lodash.random')
-}
-var chroma = require('chroma-js')
+import utils from './utils'
+import deepClone from 'mout/lang/deepClone'
+import deepEquals from 'mout/lang/deepEquals'
+import chroma from 'chroma-js'
 
 var defaults = {
   count: 5,
@@ -45,7 +41,7 @@ var checkColor = function (lab, options) {
 }
 
 var sortByContrast = function (colorList) {
-  var unsortedColors = _.clone(colorList)
+  var unsortedColors = colorList.slice(0)
   var sortedColors = [unsortedColors.shift()]
   while (unsortedColors.length > 0) {
     let lastColor = sortedColors[sortedColors.length - 1]
@@ -62,14 +58,14 @@ var sortByContrast = function (colorList) {
         nearest = i
       }
     }
-    sortedColors.push(_.pullAt(unsortedColors, nearest)[0])
+    sortedColors.push(unsortedColors.splice(nearest, 1)[0])
   }
   return sortedColors
 }
 
 var distinctColors = function (opts={}) {
 
-  var options = _.merge(defaults, opts)
+  var options = utils.mergeObj(defaults, opts)
 
   var colors = []
   var zonesProto = []
@@ -100,7 +96,7 @@ var distinctColors = function (opts={}) {
 
   for (let step = 1; step <= options.quality; step++) {
 
-    let zones = _.cloneDeep(zonesProto)
+    let zones = deepClone(zonesProto)
 
     // Find closest color for each sample
     for (let i = 0; i < samples.length; i++) {
@@ -121,7 +117,7 @@ var distinctColors = function (opts={}) {
       zones[nearest].push(samples[i])
     }
 
-    let lastColors = _.cloneDeep(colors)
+    let lastColors = deepClone(colors)
 
     for (let i = 0; i < zones.length; i++) {
       let zone = zones[i]
@@ -135,14 +131,14 @@ var distinctColors = function (opts={}) {
         Bs.push(sample[2])
       }
 
-      let lAvg = _.sum(Ls) / size
-      let aAvg = _.sum(As) / size
-      let bAvg = _.sum(Bs) / size
+      let lAvg = utils.sum(Ls) / size
+      let aAvg = utils.sum(As) / size
+      let bAvg = utils.sum(Bs) / size
 
       colors[i] = [lAvg, aAvg, bAvg]
     }
 
-    if (_.isEqual(lastColors, colors)) {
+    if (deepEquals(lastColors, colors)) {
       break
     }
 

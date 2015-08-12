@@ -24,11 +24,7 @@
   "homepage": "https://github.com/internalfx/distinct-colors#readme",
   "dependencies": {
     "chroma-js": "^1.1.1",
-    "lodash.clonedeep": "^3.0.2",
-    "lodash.isequal": "^3.0.4",
-    "lodash.merge": "^3.3.2",
-    "lodash.random": "^3.0.1",
-    "lodash.sum": "^3.6.2"
+    "mout": "^0.11.0"
   },
   "devDependencies": {
     "babel-core": "^5.8.22",
