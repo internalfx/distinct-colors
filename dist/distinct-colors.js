@@ -229,9 +229,6 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 1 */
 /***/ function(module, exports) {
 
-	
-	// Some code taken with gratitiude from the LokiJS project. Thank you Joe Minichino!
-
 	"use strict";
 
 	var utils = {
