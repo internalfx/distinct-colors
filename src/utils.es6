@@ -1,6 +1,4 @@
 
-// Some code taken with gratitiude from the LokiJS project. Thank you Joe Minichino!
-
 var utils = {
 
   mergeObj: (o1, o2) => {
