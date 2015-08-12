@@ -6,6 +6,14 @@ I have taken the ideas and the theories, and put them into a simple modular libr
 
 This library generates a palette of *visually* distinct colors, and returns an array of [chroma-js](https://github.com/gka/chroma.js) objects.
 
+distinct-colors is highly configurable:
+
+- Choose how many colors are in the palette
+- Restrict the hue to a specific range
+- Restrict the chroma (saturation) to a specific range
+- Restrict the lightness to a specific range
+- Configure general quality of the palette
+
 ## Installation
 
 ```
