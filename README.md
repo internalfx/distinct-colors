@@ -44,10 +44,10 @@ Generates a new palette. Returns an array of [chroma-js](https://github.com/gka/
 | Name | Type | Valid Range | Default | Description |
 | --- | --- | --- | --- | --- |
 | count | integer | `0-Infinity` | `5` | The number of colors the palette should contain |
-| hueMin | integer | `0-360` | `0` | The minimum hue for colors in the palette. Default: |
-| hueMax | integer | `0-360` | `360` | The maximum hue for colors in the palette. Default: |
-| chromaMin | integer | `0-100` | `0` | The minimum chroma (color) for colors in the palette. Default: |
-| chromaMax | integer | `0-100` | `100` | The maximum chroma (color) for colors in the palette. Default: |
+| hueMin | integer | `0-360` | `0` | The minimum hue for colors in the palette. |
+| hueMax | integer | `0-360` | `360` | The maximum hue for colors in the palette. |
+| chromaMin | integer | `0-100` | `0` | The minimum chroma (color) for colors in the palette. |
+| chromaMax | integer | `0-100` | `100` | The maximum chroma (color) for colors in the palette. |
 | lightMin | integer | `0-100` | `0` | The minimum lightness for colors in the palette. |
 | lightMax | integer | `0-100` | `100` | The maximum lightness for colors in the palette. |
 | quality | integer | `1-Infinity` | `50` | The number of steps for [k-means](https://en.wikipedia.org/wiki/K-means_clustering) convergence. |
