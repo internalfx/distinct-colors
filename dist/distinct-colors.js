@@ -125,14 +125,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var zonesProto = [];
 	  var samples = [];
 
-	  var rangeDivider = Math.cbrt(options.samples);
-	  var lStep = 100 / rangeDivider;
-	  var aStep = 190 / rangeDivider;
-	  var bStep = 208 / rangeDivider;
-	  for (var l = 0; l <= 100; l += lStep) {
-	    for (var a = -89; a <= 101; a += aStep) {
-	      for (var b = -110; b <= 98; b += bStep) {
-	        var color = [l, a, b];
+	  var rangeDivider = Math.cbrt(options.samples) - 1;
+	  rangeDivider *= 1.001;
+
+	  var hStep = (options.hueMax - options.hueMin) / rangeDivider;
+	  var cStep = (options.chromaMax - options.chromaMin) / rangeDivider;
+	  var lStep = (options.lightMax - options.lightMin) / rangeDivider;
+	  for (var h = options.hueMin; h <= options.hueMax; h += hStep) {
+	    for (var c = options.chromaMin; c <= options.chromaMax; c += cStep) {
+	      for (var l = options.lightMin; l <= options.lightMax; l += lStep) {
+	        var color = _chromaJs2['default'].hcl(h, c, l).lab();
 	        if (checkColor(color, options)) {
 	          samples.push(color);
 	        }

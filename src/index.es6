@@ -71,14 +71,16 @@ var distinctColors = function (opts={}) {
   var zonesProto = []
   var samples = []
 
-  var rangeDivider = Math.cbrt(options.samples)
-  var lStep = 100 / rangeDivider
-  var aStep = 190 / rangeDivider
-  var bStep = 208 / rangeDivider
-  for (let l = 0; l <= 100; l += lStep) {
-    for (let a = -89; a <= 101; a += aStep) {
-      for (let b = -110; b <= 98; b += bStep) {
-        let color = [l, a, b]
+  var rangeDivider = Math.cbrt(options.samples) - 1
+  rangeDivider *= 1.001
+
+  var hStep = (options.hueMax - options.hueMin) / rangeDivider
+  var cStep = (options.chromaMax - options.chromaMin) / rangeDivider
+  var lStep = (options.lightMax - options.lightMin) / rangeDivider
+  for (let h = options.hueMin; h <= options.hueMax; h += hStep) {
+    for (let c = options.chromaMin; c <= options.chromaMax; c += cStep) {
+      for (let l = options.lightMin; l <= options.lightMax; l += lStep) {
+        let color = chroma.hcl(h, c, l).lab()
         if (checkColor(color, options)) {
           samples.push(color)
         }
