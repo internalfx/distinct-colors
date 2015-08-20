@@ -13,7 +13,7 @@ var defaults = {
   lightMin: 0,
   lightMax: 100,
   quality: 50,
-  samples: 2000
+  samples: 800
 }
 
 var checkColor = function (lab, options) {
@@ -66,6 +66,8 @@ var sortByContrast = function (colorList) {
 var distinctColors = function (opts={}) {
 
   var options = utils.mergeObj(defaults, opts)
+
+  if (options.count <= 0) { return [] }
 
   var colors = []
   var zonesProto = []

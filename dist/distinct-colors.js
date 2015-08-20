@@ -83,7 +83,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  lightMin: 0,
 	  lightMax: 100,
 	  quality: 50,
-	  samples: 2000
+	  samples: 800
 	};
 
 	var checkColor = function checkColor(lab, options) {
@@ -120,6 +120,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var opts = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
 
 	  var options = _utils2['default'].mergeObj(defaults, opts);
+
+	  if (options.count <= 0) {
+	    return [];
+	  }
 
 	  var colors = [];
 	  var zonesProto = [];
