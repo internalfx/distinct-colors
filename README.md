@@ -51,4 +51,4 @@ Generates a new palette. Returns an array of [chroma-js](https://github.com/gka/
 | lightMin | integer | `0-100` | `0` | The minimum lightness for colors in the palette. |
 | lightMax | integer | `0-100` | `100` | The maximum lightness for colors in the palette. |
 | quality | integer | `1-Infinity` | `50` | The number of steps for [k-means](https://en.wikipedia.org/wiki/K-means_clustering) convergence. |
-| samples | integer | `1-Infinity` | `2000` | The number of color samples to choose from. |
+| samples | integer | `1-Infinity` | `800` | The number of color samples to choose from. |
