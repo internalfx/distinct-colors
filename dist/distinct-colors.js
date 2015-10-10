@@ -256,6 +256,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	"use strict";
 
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
 	var utils = {
 
 	  mergeObj: function mergeObj(o1, o2) {
@@ -280,7 +284,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	};
 
-	module.exports = utils;
+	exports["default"] = utils;
+	module.exports = exports["default"];
 
 /***/ },
 /* 2 */
