@@ -67,11 +67,15 @@ var distinctColors = function (opts = {}) {
 
   if (options.count <= 0) { return [] }
 
+  if (options.samples < options.count * 5) {
+    options.samples = options.count * 5
+  }
+
   var colors = []
   var zonesProto = []
   var samples = []
 
-  var rangeDivider = Math.cbrt(options.samples) - 1
+  var rangeDivider = Math.cbrt(options.samples)
   rangeDivider *= 1.001
 
   var hStep = (options.hueMax - options.hueMin) / rangeDivider
@@ -125,13 +129,16 @@ var distinctColors = function (opts = {}) {
       let Ls = []
       let As = []
       let Bs = []
+
+      if (size === 0) {
+        continue
+      }
+
       for (let sample of zone) {
         Ls.push(sample[0])
         As.push(sample[1])
         Bs.push(sample[2])
       }
-
-      console.log(size)
 
       let lAvg = utils.sum(Ls) / size
       let aAvg = utils.sum(As) / size
