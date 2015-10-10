@@ -3,6 +3,7 @@ import utils from './utils'
 import deepClone from 'mout/lang/deepClone'
 import deepEquals from 'mout/lang/deepEquals'
 import chroma from 'chroma-js'
+import _ from 'lodash'
 
 var defaults = {
   count: 5,
@@ -92,9 +93,17 @@ var distinctColors = function (opts = {}) {
     }
   }
 
-  let sliceSize = Math.floor(samples.length / (options.count + 1))
+  samples = _.uniq(samples, function (sample) {
+    return sample.toString()
+  })
 
-  for (let i = sliceSize; i < samples.length; i += sliceSize) {
+  if (samples.length < options.count) {
+    throw new Error('Not enough samples to generate palette, increase sample count.')
+  }
+
+  let sliceSize = Math.floor(samples.length / options.count)
+
+  for (let i = 0; i < samples.length; i += sliceSize) {
     colors.push(samples[i])
     zonesProto.push([])
     if (colors.length >= options.count) { break }
@@ -129,10 +138,6 @@ var distinctColors = function (opts = {}) {
       let Ls = []
       let As = []
       let Bs = []
-
-      if (size === 0) {
-        continue
-      }
 
       for (let sample of zone) {
         Ls.push(sample[0])
