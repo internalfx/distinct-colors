@@ -56,6 +56,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 	var _utils = __webpack_require__(1);
@@ -70,7 +74,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _moutLangDeepEquals2 = _interopRequireDefault(_moutLangDeepEquals);
 
-	var _chromaJs = __webpack_require__(23);
+	var _moutArrayUnique = __webpack_require__(23);
+
+	var _moutArrayUnique2 = _interopRequireDefault(_moutArrayUnique);
+
+	var _chromaJs = __webpack_require__(25);
 
 	var _chromaJs2 = _interopRequireDefault(_chromaJs);
 
@@ -87,7 +95,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	var checkColor = function checkColor(lab, options) {
-
 	  var color = _chromaJs2['default'].lab(lab);
 	  var hcl = color.hcl();
 	  var rgb = color.rgb();
@@ -125,11 +132,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return [];
 	  }
 
+	  if (options.samples < options.count * 5) {
+	    options.samples = options.count * 5;
+	  }
+
 	  var colors = [];
 	  var zonesProto = [];
 	  var samples = [];
 
-	  var rangeDivider = Math.cbrt(options.samples) - 1;
+	  var rangeDivider = Math.cbrt(options.samples);
 	  rangeDivider *= 1.001;
 
 	  var hStep = (options.hueMax - options.hueMin) / rangeDivider;
@@ -146,9 +157,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  }
 
-	  var sliceSize = Math.floor(samples.length / (options.count + 1));
+	  samples = (0, _moutArrayUnique2['default'])(samples, function (a, b) {
+	    return a.toString() === b.toString();
+	  });
 
-	  for (var i = sliceSize; i < samples.length; i += sliceSize) {
+	  if (samples.length < options.count) {
+	    throw new Error('Not enough samples to generate palette, increase sample count.');
+	  }
+
+	  var sliceSize = Math.floor(samples.length / options.count);
+
+	  for (var i = 0; i < samples.length; i += sliceSize) {
 	    colors.push(samples[i]);
 	    zonesProto.push([]);
 	    if (colors.length >= options.count) {
@@ -157,7 +176,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 
 	  for (var step = 1; step <= options.quality; step++) {
-
 	    var zones = (0, _moutLangDeepClone2['default'])(zonesProto);
 
 	    // Find closest color for each sample
@@ -165,7 +183,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	      var minDist = Number.MAX_SAFE_INTEGER;
 	      var nearest = 0;
 	      for (var j = 0; j < colors.length; j++) {
-
 	        var dist = Math.sqrt(Math.pow(Math.abs(samples[i][0] - colors[j][0]), 2) + Math.pow(Math.abs(samples[i][1] - colors[j][1]), 2) + Math.pow(Math.abs(samples[i][2] - colors[j][2]), 2));
 	        if (dist < minDist) {
 	          minDist = dist;
@@ -183,6 +200,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      var Ls = [];
 	      var As = [];
 	      var Bs = [];
+
 	      var _iteratorNormalCompletion = true;
 	      var _didIteratorError = false;
 	      var _iteratorError = undefined;
@@ -229,7 +247,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  });
 	};
 
-	module.exports = distinctColors;
+	exports['default'] = distinctColors;
+	module.exports = exports['default'];
 
 /***/ },
 /* 1 */
@@ -962,6 +981,69 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 23 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var filter = __webpack_require__(24);
+
+	    /**
+	     * @return {array} Array of unique items
+	     */
+	    function unique(arr, compare){
+	        compare = compare || isEqual;
+	        return filter(arr, function(item, i, arr){
+	            var n = arr.length;
+	            while (++i < n) {
+	                if ( compare(item, arr[i]) ) {
+	                    return false;
+	                }
+	            }
+	            return true;
+	        });
+	    }
+
+	    function isEqual(a, b){
+	        return a === b;
+	    }
+
+	    module.exports = unique;
+
+
+
+
+/***/ },
+/* 24 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var makeIterator = __webpack_require__(17);
+
+	    /**
+	     * Array filter
+	     */
+	    function filter(arr, callback, thisObj) {
+	        callback = makeIterator(callback, thisObj);
+	        var results = [];
+	        if (arr == null) {
+	            return results;
+	        }
+
+	        var i = -1, len = arr.length, value;
+	        while (++i < len) {
+	            value = arr[i];
+	            if (callback(value, i, arr)) {
+	                results.push(value);
+	            }
+	        }
+
+	        return results;
+	    }
+
+	    module.exports = filter;
+
+
+
+
+/***/ },
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(module) {
@@ -3430,10 +3512,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	}).call(this);
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(24)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(26)(module)))
 
 /***/ },
-/* 24 */
+/* 26 */
 /***/ function(module, exports) {
 
 	module.exports = function(module) {
