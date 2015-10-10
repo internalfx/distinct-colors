@@ -2,8 +2,8 @@
 import utils from './utils'
 import deepClone from 'mout/lang/deepClone'
 import deepEquals from 'mout/lang/deepEquals'
+import unique from 'mout/array/unique'
 import chroma from 'chroma-js'
-import _ from 'lodash'
 
 var defaults = {
   count: 5,
@@ -93,8 +93,8 @@ var distinctColors = function (opts = {}) {
     }
   }
 
-  samples = _.uniq(samples, function (sample) {
-    return sample.toString()
+  samples = unique(samples, function (a, b) {
+    return a.toString() === b.toString()
   })
 
   if (samples.length < options.count) {
