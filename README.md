@@ -1,6 +1,7 @@
 # Distinct Colors
 
 ![npm version](https://img.shields.io/npm/v/distinct-colors.svg)
+![license](https://img.shields.io/dub/l/vibe-d.svg)
 
 This is a complete rewrite of (but is heavily inspired by) [Mathieu Jacomy's](https://github.com/jacomyma) [Palette Generator](https://github.com/medialab/iwanthue/blob/master/js/libs/chroma.palette-gen.js)
 
