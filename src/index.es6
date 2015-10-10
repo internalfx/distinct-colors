@@ -17,7 +17,6 @@ var defaults = {
 }
 
 var checkColor = function (lab, options) {
-
   var color = chroma.lab(lab)
   var hcl = color.hcl()
   var rgb = color.rgb()
@@ -63,8 +62,7 @@ var sortByContrast = function (colorList) {
   return sortedColors
 }
 
-var distinctColors = function (opts={}) {
-
+var distinctColors = function (opts = {}) {
   var options = utils.mergeObj(defaults, opts)
 
   if (options.count <= 0) { return [] }
@@ -99,7 +97,6 @@ var distinctColors = function (opts={}) {
   }
 
   for (let step = 1; step <= options.quality; step++) {
-
     let zones = deepClone(zonesProto)
 
     // Find closest color for each sample
@@ -107,7 +104,6 @@ var distinctColors = function (opts={}) {
       let minDist = Number.MAX_SAFE_INTEGER
       let nearest = 0
       for (let j = 0; j < colors.length; j++) {
-
         let dist = Math.sqrt(
           Math.pow(Math.abs(samples[i][0] - colors[j][0]), 2) +
           Math.pow(Math.abs(samples[i][1] - colors[j][1]), 2) +
@@ -135,6 +131,8 @@ var distinctColors = function (opts={}) {
         Bs.push(sample[2])
       }
 
+      console.log(size)
+
       let lAvg = utils.sum(Ls) / size
       let aAvg = utils.sum(As) / size
       let bAvg = utils.sum(Bs) / size
@@ -145,7 +143,6 @@ var distinctColors = function (opts={}) {
     if (deepEquals(lastColors, colors)) {
       break
     }
-
   }
 
   colors = sortByContrast(colors)
@@ -153,4 +150,4 @@ var distinctColors = function (opts={}) {
   return colors.map((lab) => { return chroma.lab(lab) })
 }
 
-module.exports = distinctColors
+export default distinctColors
