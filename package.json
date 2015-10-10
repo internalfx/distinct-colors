@@ -1,6 +1,6 @@
 {
   "name": "distinct-colors",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Generate a palette of visually distinct colors. It's great for charts.",
   "main": "./dist/distinct-colors.js",
   "scripts": {
