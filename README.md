@@ -17,6 +17,14 @@ distinct-colors is highly configurable:
 - Restrict the lightness to a specific range
 - Configure general quality of the palette
 
+---
+
+Special thanks to [Arthur Andrew Medical](http://www.arthurandrew.com/) for sponsoring this project.
+
+Arthur Andrew Medical manufactures products with ingredients that have extensive clinical research for safety and efficacy. We specialize in Enzymes, Probiotics and Antioxidants.
+
+---
+
 ## Installation
 
 ```
@@ -50,5 +58,5 @@ Generates a new palette. Returns an array of [chroma-js](https://github.com/gka/
 | chromaMax | integer | `0-100` | `100` | The maximum chroma (color) for colors in the palette. |
 | lightMin | integer | `0-100` | `0` | The minimum lightness for colors in the palette. |
 | lightMax | integer | `0-100` | `100` | The maximum lightness for colors in the palette. |
-| quality | integer | `1-Infinity` | `50` | The number of steps for [k-means](https://en.wikipedia.org/wiki/K-means_clustering) convergence. |
+| quality | integer | `1-Infinity` | `50` | The number of steps for [k-means](https://en.wikipedia.org/wiki/K-means_clustering) convergence. Will break early if the result has converged. |
 | samples | integer | `1-Infinity` | `800` | The number of color samples to choose from. |
