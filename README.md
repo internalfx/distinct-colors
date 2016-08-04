@@ -17,6 +17,8 @@ distinct-colors is highly configurable:
 - Restrict the lightness to a specific range
 - Configure general quality of the palette
 
+To get an example of how to use this (and what it produces), check out [I want hue](http://tools.medialab.sciences-po.fr/iwanthue/).
+
 ---
 
 Special thanks to [Arthur Andrew Medical](http://www.arthurandrew.com/) for sponsoring this project.
