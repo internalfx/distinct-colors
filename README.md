@@ -43,6 +43,18 @@ var palette = distinctColors() // You may pass an optional config object
 // Thats it!
 ```
 
+## Using in Browser
+
+You can also use this library directly from your browser.
+
+```javascript
+
+      <script src="dist/distinct-colors.min.js"></script>
+      var number_of_colors = 6;
+      var palette = new DistinctColors({count: number_of_colors});
+
+```
+
 ## API
 
 #### distinctColors([options])
@@ -62,3 +74,5 @@ Generates a new palette. Returns an array of [chroma-js](https://github.com/gka/
 | lightMax | integer | `0-100` | `100` | The maximum lightness for colors in the palette. |
 | quality | integer | `1-Infinity` | `50` | The number of steps for [k-means](https://en.wikipedia.org/wiki/K-means_clustering) convergence. Will break early if the result has converged. |
 | samples | integer | `1-Infinity` | `800` | The number of color samples to choose from. |
+
+
