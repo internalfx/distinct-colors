@@ -16,7 +16,7 @@ var utils = {
   },
 
   sum: (array) => {
-    return array.reduce((a, b) => { return a + b })
+    return array.reduce((a, b) => a + b, 0)
   }
 
 }

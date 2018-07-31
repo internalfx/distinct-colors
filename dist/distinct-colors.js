@@ -2,7 +2,7 @@
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
 	else if(typeof define === 'function' && define.amd)
-		define(factory);
+		define([], factory);
 	else if(typeof exports === 'object')
 		exports["DistinctColors"] = factory();
 	else
@@ -52,7 +52,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -250,9 +250,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports['default'] = distinctColors;
 	module.exports = exports['default'];
 
-/***/ },
+/***/ }),
 /* 1 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	"use strict";
 
@@ -279,7 +279,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  sum: function sum(array) {
 	    return array.reduce(function (a, b) {
 	      return a + b;
-	    });
+	    }, 0);
 	  }
 
 	};
@@ -287,9 +287,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports["default"] = utils;
 	module.exports = exports["default"];
 
-/***/ },
+/***/ }),
 /* 2 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var clone = __webpack_require__(3);
 	var forOwn = __webpack_require__(7);
@@ -341,9 +341,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 
-/***/ },
+/***/ }),
 /* 3 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var kindOf = __webpack_require__(4);
 	var isPlainObject = __webpack_require__(5);
@@ -396,9 +396,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 
-/***/ },
+/***/ }),
 /* 4 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	
 
@@ -422,9 +422,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 
-/***/ },
+/***/ }),
 /* 5 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	
 
@@ -441,9 +441,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 
-/***/ },
+/***/ }),
 /* 6 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var forOwn = __webpack_require__(7);
 
@@ -475,9 +475,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 
-/***/ },
+/***/ }),
 /* 7 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var hasOwn = __webpack_require__(8);
 	var forIn = __webpack_require__(9);
@@ -500,9 +500,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 
-/***/ },
+/***/ }),
 /* 8 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	
 
@@ -518,9 +518,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 
-/***/ },
+/***/ }),
 /* 9 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var hasOwn = __webpack_require__(8);
 
@@ -600,9 +600,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 
-/***/ },
+/***/ }),
 /* 10 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var is = __webpack_require__(11);
 	var isObject = __webpack_require__(12);
@@ -636,9 +636,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 
-/***/ },
+/***/ }),
 /* 11 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	
 
@@ -665,9 +665,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 
-/***/ },
+/***/ }),
 /* 12 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var isKind = __webpack_require__(13);
 	    /**
@@ -679,9 +679,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 
-/***/ },
+/***/ }),
 /* 13 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var kindOf = __webpack_require__(4);
 	    /**
@@ -694,9 +694,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 
-/***/ },
+/***/ }),
 /* 14 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var isKind = __webpack_require__(13);
 	    /**
@@ -708,9 +708,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 
-/***/ },
+/***/ }),
 /* 15 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var hasOwn = __webpack_require__(8);
 	var every = __webpack_require__(16);
@@ -747,9 +747,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 
-/***/ },
+/***/ }),
 /* 16 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var forOwn = __webpack_require__(7);
 	var makeIterator = __webpack_require__(17);
@@ -776,9 +776,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 
-/***/ },
+/***/ }),
 /* 17 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var identity = __webpack_require__(18);
 	var prop = __webpack_require__(19);
@@ -816,9 +816,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 
-/***/ },
+/***/ }),
 /* 18 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	
 
@@ -834,9 +834,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 
-/***/ },
+/***/ }),
 /* 19 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	
 
@@ -854,9 +854,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 
-/***/ },
+/***/ }),
 /* 20 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var forOwn = __webpack_require__(7);
 	var isArray = __webpack_require__(14);
@@ -915,9 +915,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 
-/***/ },
+/***/ }),
 /* 21 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var is = __webpack_require__(11);
 	var isArray = __webpack_require__(14);
@@ -951,9 +951,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 
-/***/ },
+/***/ }),
 /* 22 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var makeIterator = __webpack_require__(17);
 
@@ -984,9 +984,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 
-/***/ },
+/***/ }),
 /* 23 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var filter = __webpack_require__(24);
 
@@ -1015,9 +1015,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 
-/***/ },
+/***/ }),
 /* 24 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var makeIterator = __webpack_require__(17);
 
@@ -1047,9 +1047,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 
-/***/ },
+/***/ }),
 /* 25 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(module) {
 	/**
@@ -1057,7 +1057,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 *
 	 * chroma.js - JavaScript library for color conversions
 	 * 
-	 * Copyright (c) 2011-2015, Gregor Aisch
+	 * Copyright (c) 2011-2017, Gregor Aisch
 	 * All rights reserved.
 	 * 
 	 * Redistribution and use in source and binary forms, with or without
@@ -1087,7 +1087,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 */
 
 	(function() {
-	  var Color, DEG2RAD, LAB_CONSTANTS, PI, PITHIRD, RAD2DEG, TWOPI, _guess_formats, _guess_formats_sorted, _input, _interpolators, abs, atan2, bezier, blend, blend_f, brewer, burn, chroma, clip_rgb, cmyk2rgb, colors, cos, css2rgb, darken, dodge, each, floor, hex2rgb, hsi2rgb, hsl2css, hsl2rgb, hsv2rgb, interpolate, interpolate_hsx, interpolate_lab, interpolate_num, interpolate_rgb, lab2lch, lab2rgb, lab_xyz, lch2lab, lch2rgb, lighten, limit, log, luminance_x, m, max, multiply, normal, num2rgb, overlay, pow, rgb2cmyk, rgb2css, rgb2hex, rgb2hsi, rgb2hsl, rgb2hsv, rgb2lab, rgb2lch, rgb2luminance, rgb2num, rgb2temperature, rgb2xyz, rgb_xyz, rnd, root, round, screen, sin, sqrt, temperature2rgb, type, unpack, w3cx11, xyz_lab, xyz_rgb,
+	  var Color, DEG2RAD, LAB_CONSTANTS, PI, PITHIRD, RAD2DEG, TWOPI, _average_lrgb, _guess_formats, _guess_formats_sorted, _input, _interpolators, abs, atan2, bezier, blend, blend_f, brewer, burn, chroma, clip_rgb, cmyk2rgb, colors, cos, css2rgb, darken, dodge, each, floor, hcg2rgb, hex2rgb, hsi2rgb, hsl2css, hsl2rgb, hsv2rgb, interpolate, interpolate_hsx, interpolate_lab, interpolate_lrgb, interpolate_num, interpolate_rgb, lab2lch, lab2rgb, lab_xyz, lch2lab, lch2rgb, lighten, limit, log, luminance_x, m, max, multiply, normal, num2rgb, overlay, pow, rgb2cmyk, rgb2css, rgb2hcg, rgb2hex, rgb2hsi, rgb2hsl, rgb2hsv, rgb2lab, rgb2lch, rgb2luminance, rgb2num, rgb2temperature, rgb2xyz, rgb_xyz, rnd, root, round, screen, sin, sqrt, temperature2rgb, type, unpack, w3cx11, xyz_lab, xyz_rgb,
 	    slice = [].slice;
 
 	  type = (function() {
@@ -1128,16 +1128,21 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  unpack = function(args) {
 	    if (args.length >= 3) {
-	      return [].slice.call(args);
+	      return Array.prototype.slice.call(args);
 	    } else {
 	      return args[0];
 	    }
 	  };
 
 	  clip_rgb = function(rgb) {
-	    var i;
-	    for (i in rgb) {
+	    var i, o;
+	    rgb._clipped = false;
+	    rgb._unclipped = rgb.slice(0);
+	    for (i = o = 0; o < 3; i = ++o) {
 	      if (i < 3) {
+	        if (rgb[i] < 0 || rgb[i] > 255) {
+	          rgb._clipped = true;
+	        }
 	        if (rgb[i] < 0) {
 	          rgb[i] = 0;
 	        }
@@ -1152,6 +1157,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	          rgb[i] = 1;
 	        }
 	      }
+	    }
+	    if (!rgb._clipped) {
+	      delete rgb._unclipped;
 	    }
 	    return rgb;
 	  };
@@ -1177,6 +1185,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    })(Color, arguments, function(){});
 	  };
 
+	  chroma["default"] = chroma;
+
 	  _interpolators = [];
 
 	  if ((typeof module !== "undefined" && module !== null) && (module.exports != null)) {
@@ -1192,41 +1202,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    root.chroma = chroma;
 	  }
 
-	  chroma.version = '1.1.1';
-
-
-	  /**
-	      chroma.js
-	  
-	      Copyright (c) 2011-2013, Gregor Aisch
-	      All rights reserved.
-	  
-	      Redistribution and use in source and binary forms, with or without
-	      modification, are permitted provided that the following conditions are met:
-	  
-	      * Redistributions of source code must retain the above copyright notice, this
-	        list of conditions and the following disclaimer.
-	  
-	      * Redistributions in binary form must reproduce the above copyright notice,
-	        this list of conditions and the following disclaimer in the documentation
-	        and/or other materials provided with the distribution.
-	  
-	      * The name Gregor Aisch may not be used to endorse or promote products
-	        derived from this software without specific prior written permission.
-	  
-	      THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-	      AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-	      IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-	      DISCLAIMED. IN NO EVENT SHALL GREGOR AISCH OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
-	      INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
-	      BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-	      DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
-	      OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
-	      NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
-	      EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-	  
-	      @source: https://github.com/gka/chroma.js
-	   */
+	  chroma.version = '1.3.7';
 
 	  _input = {};
 
@@ -1245,7 +1221,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	          args.push(arg);
 	        }
 	      }
-	      mode = args[args.length - 1];
+	      if (args.length > 1) {
+	        mode = args[args.length - 1];
+	      }
 	      if (_input[mode] != null) {
 	        me._rgb = clip_rgb(_input[mode](unpack(args.slice(0, -1))));
 	      } else {
@@ -1277,16 +1255,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	      }
 	    }
 
-	    Color.prototype.alpha = function(alpha) {
-	      if (arguments.length) {
-	        this._rgb[3] = alpha;
-	        return this;
-	      }
-	      return this._rgb[3];
+	    Color.prototype.toString = function() {
+	      return this.hex();
 	    };
 
-	    Color.prototype.toString = function() {
-	      return this.name();
+	    Color.prototype.clone = function() {
+	      return chroma(me._rgb);
 	    };
 
 	    return Color;
@@ -1334,6 +1308,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    PuRd: ['#f7f4f9', '#e7e1ef', '#d4b9da', '#c994c7', '#df65b0', '#e7298a', '#ce1256', '#980043', '#67001f'],
 	    Blues: ['#f7fbff', '#deebf7', '#c6dbef', '#9ecae1', '#6baed6', '#4292c6', '#2171b5', '#08519c', '#08306b'],
 	    PuBuGn: ['#fff7fb', '#ece2f0', '#d0d1e6', '#a6bddb', '#67a9cf', '#3690c0', '#02818a', '#016c59', '#014636'],
+	    Viridis: ['#440154', '#482777', '#3f4a8a', '#31678e', '#26838f', '#1f9d8a', '#6cce5a', '#b6de2b', '#fee825'],
 	    Spectral: ['#9e0142', '#d53e4f', '#f46d43', '#fdae61', '#fee08b', '#ffffbf', '#e6f598', '#abdda4', '#66c2a5', '#3288bd', '#5e4fa2'],
 	    RdYlGn: ['#a50026', '#d73027', '#f46d43', '#fdae61', '#fee08b', '#ffffbf', '#d9ef8b', '#a6d96a', '#66bd63', '#1a9850', '#006837'],
 	    RdBu: ['#67001f', '#b2182b', '#d6604d', '#f4a582', '#fddbc7', '#f7f7f7', '#d1e5f0', '#92c5de', '#4393c3', '#2166ac', '#053061'],
@@ -1353,6 +1328,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	    Pastel1: ['#fbb4ae', '#b3cde3', '#ccebc5', '#decbe4', '#fed9a6', '#ffffcc', '#e5d8bd', '#fddaec', '#f2f2f2']
 	  };
 
+	  (function() {
+	    var key, results;
+	    results = [];
+	    for (key in brewer) {
+	      results.push(brewer[key.toLowerCase()] = brewer[key]);
+	    }
+	    return results;
+	  })();
+
 
 	  /**
 	  	X11 color names
@@ -1361,154 +1345,161 @@ return /******/ (function(modules) { // webpackBootstrap
 	   */
 
 	  w3cx11 = {
-	    indigo: "#4b0082",
-	    gold: "#ffd700",
-	    hotpink: "#ff69b4",
-	    firebrick: "#b22222",
-	    indianred: "#cd5c5c",
-	    yellow: "#ffff00",
-	    mistyrose: "#ffe4e1",
-	    darkolivegreen: "#556b2f",
-	    olive: "#808000",
-	    darkseagreen: "#8fbc8f",
-	    pink: "#ffc0cb",
-	    tomato: "#ff6347",
-	    lightcoral: "#f08080",
-	    orangered: "#ff4500",
-	    navajowhite: "#ffdead",
-	    lime: "#00ff00",
-	    palegreen: "#98fb98",
-	    darkslategrey: "#2f4f4f",
-	    greenyellow: "#adff2f",
-	    burlywood: "#deb887",
-	    seashell: "#fff5ee",
-	    mediumspringgreen: "#00fa9a",
-	    fuchsia: "#ff00ff",
-	    papayawhip: "#ffefd5",
-	    blanchedalmond: "#ffebcd",
-	    chartreuse: "#7fff00",
-	    dimgray: "#696969",
-	    black: "#000000",
-	    peachpuff: "#ffdab9",
-	    springgreen: "#00ff7f",
-	    aquamarine: "#7fffd4",
-	    white: "#ffffff",
-	    orange: "#ffa500",
-	    lightsalmon: "#ffa07a",
-	    darkslategray: "#2f4f4f",
-	    brown: "#a52a2a",
-	    ivory: "#fffff0",
-	    dodgerblue: "#1e90ff",
-	    peru: "#cd853f",
-	    lawngreen: "#7cfc00",
-	    chocolate: "#d2691e",
-	    crimson: "#dc143c",
-	    forestgreen: "#228b22",
-	    darkgrey: "#a9a9a9",
-	    lightseagreen: "#20b2aa",
-	    cyan: "#00ffff",
-	    mintcream: "#f5fffa",
-	    silver: "#c0c0c0",
-	    antiquewhite: "#faebd7",
-	    mediumorchid: "#ba55d3",
-	    skyblue: "#87ceeb",
-	    gray: "#808080",
-	    darkturquoise: "#00ced1",
-	    goldenrod: "#daa520",
-	    darkgreen: "#006400",
-	    floralwhite: "#fffaf0",
-	    darkviolet: "#9400d3",
-	    darkgray: "#a9a9a9",
-	    moccasin: "#ffe4b5",
-	    saddlebrown: "#8b4513",
-	    grey: "#808080",
-	    darkslateblue: "#483d8b",
-	    lightskyblue: "#87cefa",
-	    lightpink: "#ffb6c1",
-	    mediumvioletred: "#c71585",
-	    slategrey: "#708090",
-	    red: "#ff0000",
-	    deeppink: "#ff1493",
-	    limegreen: "#32cd32",
-	    darkmagenta: "#8b008b",
-	    palegoldenrod: "#eee8aa",
-	    plum: "#dda0dd",
-	    turquoise: "#40e0d0",
-	    lightgrey: "#d3d3d3",
-	    lightgoldenrodyellow: "#fafad2",
-	    darkgoldenrod: "#b8860b",
-	    lavender: "#e6e6fa",
-	    maroon: "#800000",
-	    yellowgreen: "#9acd32",
-	    sandybrown: "#f4a460",
-	    thistle: "#d8bfd8",
-	    violet: "#ee82ee",
-	    navy: "#000080",
-	    magenta: "#ff00ff",
-	    dimgrey: "#696969",
-	    tan: "#d2b48c",
-	    rosybrown: "#bc8f8f",
-	    olivedrab: "#6b8e23",
-	    blue: "#0000ff",
-	    lightblue: "#add8e6",
-	    ghostwhite: "#f8f8ff",
-	    honeydew: "#f0fff0",
-	    cornflowerblue: "#6495ed",
-	    slateblue: "#6a5acd",
-	    linen: "#faf0e6",
-	    darkblue: "#00008b",
-	    powderblue: "#b0e0e6",
-	    seagreen: "#2e8b57",
-	    darkkhaki: "#bdb76b",
-	    snow: "#fffafa",
-	    sienna: "#a0522d",
-	    mediumblue: "#0000cd",
-	    royalblue: "#4169e1",
-	    lightcyan: "#e0ffff",
-	    green: "#008000",
-	    mediumpurple: "#9370db",
-	    midnightblue: "#191970",
-	    cornsilk: "#fff8dc",
-	    paleturquoise: "#afeeee",
-	    bisque: "#ffe4c4",
-	    slategray: "#708090",
-	    darkcyan: "#008b8b",
-	    khaki: "#f0e68c",
-	    wheat: "#f5deb3",
-	    teal: "#008080",
-	    darkorchid: "#9932cc",
-	    deepskyblue: "#00bfff",
-	    salmon: "#fa8072",
-	    darkred: "#8b0000",
-	    steelblue: "#4682b4",
-	    palevioletred: "#db7093",
-	    lightslategray: "#778899",
-	    aliceblue: "#f0f8ff",
-	    lightslategrey: "#778899",
-	    lightgreen: "#90ee90",
-	    orchid: "#da70d6",
-	    gainsboro: "#dcdcdc",
-	    mediumseagreen: "#3cb371",
-	    lightgray: "#d3d3d3",
-	    mediumturquoise: "#48d1cc",
-	    lemonchiffon: "#fffacd",
-	    cadetblue: "#5f9ea0",
-	    lightyellow: "#ffffe0",
-	    lavenderblush: "#fff0f5",
-	    coral: "#ff7f50",
-	    purple: "#800080",
-	    aqua: "#00ffff",
-	    whitesmoke: "#f5f5f5",
-	    mediumslateblue: "#7b68ee",
-	    darkorange: "#ff8c00",
-	    mediumaquamarine: "#66cdaa",
-	    darksalmon: "#e9967a",
-	    beige: "#f5f5dc",
-	    blueviolet: "#8a2be2",
-	    azure: "#f0ffff",
-	    lightsteelblue: "#b0c4de",
-	    oldlace: "#fdf5e6",
-	    rebeccapurple: "#663399"
+	    aliceblue: '#f0f8ff',
+	    antiquewhite: '#faebd7',
+	    aqua: '#00ffff',
+	    aquamarine: '#7fffd4',
+	    azure: '#f0ffff',
+	    beige: '#f5f5dc',
+	    bisque: '#ffe4c4',
+	    black: '#000000',
+	    blanchedalmond: '#ffebcd',
+	    blue: '#0000ff',
+	    blueviolet: '#8a2be2',
+	    brown: '#a52a2a',
+	    burlywood: '#deb887',
+	    cadetblue: '#5f9ea0',
+	    chartreuse: '#7fff00',
+	    chocolate: '#d2691e',
+	    coral: '#ff7f50',
+	    cornflower: '#6495ed',
+	    cornflowerblue: '#6495ed',
+	    cornsilk: '#fff8dc',
+	    crimson: '#dc143c',
+	    cyan: '#00ffff',
+	    darkblue: '#00008b',
+	    darkcyan: '#008b8b',
+	    darkgoldenrod: '#b8860b',
+	    darkgray: '#a9a9a9',
+	    darkgreen: '#006400',
+	    darkgrey: '#a9a9a9',
+	    darkkhaki: '#bdb76b',
+	    darkmagenta: '#8b008b',
+	    darkolivegreen: '#556b2f',
+	    darkorange: '#ff8c00',
+	    darkorchid: '#9932cc',
+	    darkred: '#8b0000',
+	    darksalmon: '#e9967a',
+	    darkseagreen: '#8fbc8f',
+	    darkslateblue: '#483d8b',
+	    darkslategray: '#2f4f4f',
+	    darkslategrey: '#2f4f4f',
+	    darkturquoise: '#00ced1',
+	    darkviolet: '#9400d3',
+	    deeppink: '#ff1493',
+	    deepskyblue: '#00bfff',
+	    dimgray: '#696969',
+	    dimgrey: '#696969',
+	    dodgerblue: '#1e90ff',
+	    firebrick: '#b22222',
+	    floralwhite: '#fffaf0',
+	    forestgreen: '#228b22',
+	    fuchsia: '#ff00ff',
+	    gainsboro: '#dcdcdc',
+	    ghostwhite: '#f8f8ff',
+	    gold: '#ffd700',
+	    goldenrod: '#daa520',
+	    gray: '#808080',
+	    green: '#008000',
+	    greenyellow: '#adff2f',
+	    grey: '#808080',
+	    honeydew: '#f0fff0',
+	    hotpink: '#ff69b4',
+	    indianred: '#cd5c5c',
+	    indigo: '#4b0082',
+	    ivory: '#fffff0',
+	    khaki: '#f0e68c',
+	    laserlemon: '#ffff54',
+	    lavender: '#e6e6fa',
+	    lavenderblush: '#fff0f5',
+	    lawngreen: '#7cfc00',
+	    lemonchiffon: '#fffacd',
+	    lightblue: '#add8e6',
+	    lightcoral: '#f08080',
+	    lightcyan: '#e0ffff',
+	    lightgoldenrod: '#fafad2',
+	    lightgoldenrodyellow: '#fafad2',
+	    lightgray: '#d3d3d3',
+	    lightgreen: '#90ee90',
+	    lightgrey: '#d3d3d3',
+	    lightpink: '#ffb6c1',
+	    lightsalmon: '#ffa07a',
+	    lightseagreen: '#20b2aa',
+	    lightskyblue: '#87cefa',
+	    lightslategray: '#778899',
+	    lightslategrey: '#778899',
+	    lightsteelblue: '#b0c4de',
+	    lightyellow: '#ffffe0',
+	    lime: '#00ff00',
+	    limegreen: '#32cd32',
+	    linen: '#faf0e6',
+	    magenta: '#ff00ff',
+	    maroon: '#800000',
+	    maroon2: '#7f0000',
+	    maroon3: '#b03060',
+	    mediumaquamarine: '#66cdaa',
+	    mediumblue: '#0000cd',
+	    mediumorchid: '#ba55d3',
+	    mediumpurple: '#9370db',
+	    mediumseagreen: '#3cb371',
+	    mediumslateblue: '#7b68ee',
+	    mediumspringgreen: '#00fa9a',
+	    mediumturquoise: '#48d1cc',
+	    mediumvioletred: '#c71585',
+	    midnightblue: '#191970',
+	    mintcream: '#f5fffa',
+	    mistyrose: '#ffe4e1',
+	    moccasin: '#ffe4b5',
+	    navajowhite: '#ffdead',
+	    navy: '#000080',
+	    oldlace: '#fdf5e6',
+	    olive: '#808000',
+	    olivedrab: '#6b8e23',
+	    orange: '#ffa500',
+	    orangered: '#ff4500',
+	    orchid: '#da70d6',
+	    palegoldenrod: '#eee8aa',
+	    palegreen: '#98fb98',
+	    paleturquoise: '#afeeee',
+	    palevioletred: '#db7093',
+	    papayawhip: '#ffefd5',
+	    peachpuff: '#ffdab9',
+	    peru: '#cd853f',
+	    pink: '#ffc0cb',
+	    plum: '#dda0dd',
+	    powderblue: '#b0e0e6',
+	    purple: '#800080',
+	    purple2: '#7f007f',
+	    purple3: '#a020f0',
+	    rebeccapurple: '#663399',
+	    red: '#ff0000',
+	    rosybrown: '#bc8f8f',
+	    royalblue: '#4169e1',
+	    saddlebrown: '#8b4513',
+	    salmon: '#fa8072',
+	    sandybrown: '#f4a460',
+	    seagreen: '#2e8b57',
+	    seashell: '#fff5ee',
+	    sienna: '#a0522d',
+	    silver: '#c0c0c0',
+	    skyblue: '#87ceeb',
+	    slateblue: '#6a5acd',
+	    slategray: '#708090',
+	    slategrey: '#708090',
+	    snow: '#fffafa',
+	    springgreen: '#00ff7f',
+	    steelblue: '#4682b4',
+	    tan: '#d2b48c',
+	    teal: '#008080',
+	    thistle: '#d8bfd8',
+	    tomato: '#ff6347',
+	    turquoise: '#40e0d0',
+	    violet: '#ee82ee',
+	    wheat: '#f5deb3',
+	    white: '#ffffff',
+	    whitesmoke: '#f5f5f5',
+	    yellow: '#ffff00',
+	    yellowgreen: '#9acd32'
 	  };
 
 	  chroma.colors = colors = w3cx11;
@@ -1526,14 +1517,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	    r = xyz_rgb(3.2404542 * x - 1.5371385 * y - 0.4985314 * z);
 	    g = xyz_rgb(-0.9692660 * x + 1.8760108 * y + 0.0415560 * z);
 	    b = xyz_rgb(0.0556434 * x - 0.2040259 * y + 1.0572252 * z);
-	    r = limit(r, 0, 255);
-	    g = limit(g, 0, 255);
-	    b = limit(b, 0, 255);
 	    return [r, g, b, args.length > 3 ? args[3] : 1];
 	  };
 
 	  xyz_rgb = function(r) {
-	    return round(255 * (r <= 0.00304 ? 12.92 * r : 1.055 * pow(r, 1 / 2.4) - 0.055));
+	    return 255 * (r <= 0.00304 ? 12.92 * r : 1.055 * pow(r, 1 / 2.4) - 0.055);
 	  };
 
 	  lab_xyz = function(t) {
@@ -1755,8 +1743,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    if (lightness == null) {
 	      lightness = [0, 1];
 	    }
-	    dl = lightness[1] - lightness[0];
 	    dh = 0;
+	    if (type(lightness) === 'array') {
+	      dl = lightness[1] - lightness[0];
+	    } else {
+	      dl = 0;
+	      lightness = [lightness, lightness];
+	    }
 	    f = function(fract) {
 	      var a, amp, b, cos_a, g, h, l, r, sin_a;
 	      a = TWOPI * ((start + 120) / 360 + rotations * fract);
@@ -1810,13 +1803,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	      if (h == null) {
 	        return lightness;
 	      }
-	      lightness = h;
-	      if (type(lightness) === 'array') {
-	        dl = lightness[1] - lightness[0];
-	        if (dl === 0) {
-	          lightness = lightness[1];
-	        }
+	      if (type(h) === 'array') {
+	        lightness = h;
+	        dl = h[1] - h[0];
 	      } else {
+	        lightness = [h, h];
 	        dl = 0;
 	      }
 	      return f;
@@ -1838,6 +1829,51 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return new Color(code);
 	  };
 
+	  _interpolators = [];
+
+	  interpolate = function(col1, col2, f, m) {
+	    var interpol, len, o, res;
+	    if (f == null) {
+	      f = 0.5;
+	    }
+	    if (m == null) {
+	      m = 'rgb';
+	    }
+
+	    /*
+	    interpolates between colors
+	    f = 0 --> me
+	    f = 1 --> col
+	     */
+	    if (type(col1) !== 'object') {
+	      col1 = chroma(col1);
+	    }
+	    if (type(col2) !== 'object') {
+	      col2 = chroma(col2);
+	    }
+	    for (o = 0, len = _interpolators.length; o < len; o++) {
+	      interpol = _interpolators[o];
+	      if (m === interpol[0]) {
+	        res = interpol[1](col1, col2, f, m);
+	        break;
+	      }
+	    }
+	    if (res == null) {
+	      throw "color mode " + m + " is not supported";
+	    }
+	    return res.alpha(col1.alpha() + f * (col2.alpha() - col1.alpha()));
+	  };
+
+	  chroma.interpolate = interpolate;
+
+	  Color.prototype.interpolate = function(col2, f, m) {
+	    return interpolate(this, col2, f, m);
+	  };
+
+	  chroma.mix = interpolate;
+
+	  Color.prototype.mix = Color.prototype.interpolate;
+
 	  _input.rgb = function() {
 	    var k, ref, results, v;
 	    ref = unpack(arguments);
@@ -1857,16 +1893,29 @@ return /******/ (function(modules) { // webpackBootstrap
 	    })(Color, slice.call(arguments).concat(['rgb']), function(){});
 	  };
 
-	  Color.prototype.rgb = function() {
-	    return this._rgb.slice(0, 3);
+	  Color.prototype.rgb = function(round) {
+	    if (round == null) {
+	      round = true;
+	    }
+	    if (round) {
+	      return this._rgb.map(Math.round).slice(0, 3);
+	    } else {
+	      return this._rgb.slice(0, 3);
+	    }
 	  };
 
-	  Color.prototype.rgba = function() {
-	    return this._rgb;
+	  Color.prototype.rgba = function(round) {
+	    if (round == null) {
+	      round = true;
+	    }
+	    if (!round) {
+	      return this._rgb.slice(0);
+	    }
+	    return [Math.round(this._rgb[0]), Math.round(this._rgb[1]), Math.round(this._rgb[2]), this._rgb[3]];
 	  };
 
 	  _guess_formats.push({
-	    p: 15,
+	    p: 3,
 	    test: function(n) {
 	      var a;
 	      a = unpack(arguments);
@@ -1878,6 +1927,96 @@ return /******/ (function(modules) { // webpackBootstrap
 	      }
 	    }
 	  });
+
+	  _input.lrgb = _input.rgb;
+
+	  interpolate_lrgb = function(col1, col2, f, m) {
+	    var xyz0, xyz1;
+	    xyz0 = col1._rgb;
+	    xyz1 = col2._rgb;
+	    return new Color(sqrt(pow(xyz0[0], 2) * (1 - f) + pow(xyz1[0], 2) * f), sqrt(pow(xyz0[1], 2) * (1 - f) + pow(xyz1[1], 2) * f), sqrt(pow(xyz0[2], 2) * (1 - f) + pow(xyz1[2], 2) * f), m);
+	  };
+
+	  _average_lrgb = function(colors) {
+	    var col, f, len, o, rgb, xyz;
+	    f = 1 / colors.length;
+	    xyz = [0, 0, 0, 0];
+	    for (o = 0, len = colors.length; o < len; o++) {
+	      col = colors[o];
+	      rgb = col._rgb;
+	      xyz[0] += pow(rgb[0], 2) * f;
+	      xyz[1] += pow(rgb[1], 2) * f;
+	      xyz[2] += pow(rgb[2], 2) * f;
+	      xyz[3] += rgb[3] * f;
+	    }
+	    xyz[0] = sqrt(xyz[0]);
+	    xyz[1] = sqrt(xyz[1]);
+	    xyz[2] = sqrt(xyz[2]);
+	    return new Color(xyz);
+	  };
+
+	  _interpolators.push(['lrgb', interpolate_lrgb]);
+
+	  chroma.average = function(colors, mode) {
+	    var A, alpha, c, cnt, dx, dy, first, i, l, len, o, xyz, xyz2;
+	    if (mode == null) {
+	      mode = 'rgb';
+	    }
+	    l = colors.length;
+	    colors = colors.map(function(c) {
+	      return chroma(c);
+	    });
+	    first = colors.splice(0, 1)[0];
+	    if (mode === 'lrgb') {
+	      return _average_lrgb(colors);
+	    }
+	    xyz = first.get(mode);
+	    cnt = [];
+	    dx = 0;
+	    dy = 0;
+	    for (i in xyz) {
+	      xyz[i] = xyz[i] || 0;
+	      cnt.push(isNaN(xyz[i]) ? 0 : 1);
+	      if (mode.charAt(i) === 'h' && !isNaN(xyz[i])) {
+	        A = xyz[i] / 180 * PI;
+	        dx += cos(A);
+	        dy += sin(A);
+	      }
+	    }
+	    alpha = first.alpha();
+	    for (o = 0, len = colors.length; o < len; o++) {
+	      c = colors[o];
+	      xyz2 = c.get(mode);
+	      alpha += c.alpha();
+	      for (i in xyz) {
+	        if (!isNaN(xyz2[i])) {
+	          cnt[i] += 1;
+	          if (mode.charAt(i) === 'h') {
+	            A = xyz2[i] / 180 * PI;
+	            dx += cos(A);
+	            dy += sin(A);
+	          } else {
+	            xyz[i] += xyz2[i];
+	          }
+	        }
+	      }
+	    }
+	    for (i in xyz) {
+	      if (mode.charAt(i) === 'h') {
+	        A = atan2(dy / cnt[i], dx / cnt[i]) / PI * 180;
+	        while (A < 0) {
+	          A += 360;
+	        }
+	        while (A >= 360) {
+	          A -= 360;
+	        }
+	        xyz[i] = A;
+	      } else {
+	        xyz[i] = xyz[i] / cnt[i];
+	      }
+	    }
+	    return chroma(xyz, mode).alpha(alpha / l);
+	  };
 
 	  hex2rgb = function(hex) {
 	    var a, b, g, r, rgb, u;
@@ -1918,6 +2057,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	      mode = 'rgb';
 	    }
 	    r = channels[0], g = channels[1], b = channels[2], a = channels[3];
+	    r = Math.round(r);
+	    g = Math.round(g);
+	    b = Math.round(b);
 	    u = r << 16 | g << 8 | b;
 	    str = "000000" + u.toString(16);
 	    str = str.substr(str.length - 6);
@@ -1955,7 +2097,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  };
 
 	  _guess_formats.push({
-	    p: 10,
+	    p: 4,
 	    test: function(n) {
 	      if (arguments.length === 1 && type(n) === "string") {
 	        return 'hex';
@@ -2092,9 +2234,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	          ref5 = [v, p, q], r = ref5[0], g = ref5[1], b = ref5[2];
 	      }
 	    }
-	    r = round(r);
-	    g = round(g);
-	    b = round(b);
 	    return [r, g, b, args.length > 3 ? args[3] : 1];
 	  };
 
@@ -2173,13 +2312,104 @@ return /******/ (function(modules) { // webpackBootstrap
 	  _input.num = num2rgb;
 
 	  _guess_formats.push({
-	    p: 10,
+	    p: 1,
 	    test: function(n) {
 	      if (arguments.length === 1 && type(n) === "number" && n >= 0 && n <= 0xFFFFFF) {
 	        return 'num';
 	      }
 	    }
 	  });
+
+	  hcg2rgb = function() {
+	    var _c, _g, args, b, c, f, g, h, i, p, q, r, ref, ref1, ref2, ref3, ref4, ref5, t, v;
+	    args = unpack(arguments);
+	    h = args[0], c = args[1], _g = args[2];
+	    c = c / 100;
+	    g = g / 100 * 255;
+	    _c = c * 255;
+	    if (c === 0) {
+	      r = g = b = _g;
+	    } else {
+	      if (h === 360) {
+	        h = 0;
+	      }
+	      if (h > 360) {
+	        h -= 360;
+	      }
+	      if (h < 0) {
+	        h += 360;
+	      }
+	      h /= 60;
+	      i = floor(h);
+	      f = h - i;
+	      p = _g * (1 - c);
+	      q = p + _c * (1 - f);
+	      t = p + _c * f;
+	      v = p + _c;
+	      switch (i) {
+	        case 0:
+	          ref = [v, t, p], r = ref[0], g = ref[1], b = ref[2];
+	          break;
+	        case 1:
+	          ref1 = [q, v, p], r = ref1[0], g = ref1[1], b = ref1[2];
+	          break;
+	        case 2:
+	          ref2 = [p, v, t], r = ref2[0], g = ref2[1], b = ref2[2];
+	          break;
+	        case 3:
+	          ref3 = [p, q, v], r = ref3[0], g = ref3[1], b = ref3[2];
+	          break;
+	        case 4:
+	          ref4 = [t, p, v], r = ref4[0], g = ref4[1], b = ref4[2];
+	          break;
+	        case 5:
+	          ref5 = [v, p, q], r = ref5[0], g = ref5[1], b = ref5[2];
+	      }
+	    }
+	    return [r, g, b, args.length > 3 ? args[3] : 1];
+	  };
+
+	  rgb2hcg = function() {
+	    var _g, b, c, delta, g, h, min, r, ref;
+	    ref = unpack(arguments), r = ref[0], g = ref[1], b = ref[2];
+	    min = Math.min(r, g, b);
+	    max = Math.max(r, g, b);
+	    delta = max - min;
+	    c = delta * 100 / 255;
+	    _g = min / (255 - delta) * 100;
+	    if (delta === 0) {
+	      h = Number.NaN;
+	    } else {
+	      if (r === max) {
+	        h = (g - b) / delta;
+	      }
+	      if (g === max) {
+	        h = 2 + (b - r) / delta;
+	      }
+	      if (b === max) {
+	        h = 4 + (r - g) / delta;
+	      }
+	      h *= 60;
+	      if (h < 0) {
+	        h += 360;
+	      }
+	    }
+	    return [h, c, _g];
+	  };
+
+	  chroma.hcg = function() {
+	    return (function(func, args, ctor) {
+	      ctor.prototype = func.prototype;
+	      var child = new ctor, result = func.apply(child, args);
+	      return Object(result) === result ? result : child;
+	    })(Color, slice.call(arguments).concat(['hcg']), function(){});
+	  };
+
+	  _input.hcg = hcg2rgb;
+
+	  Color.prototype.hcg = function() {
+	    return rgb2hcg(this._rgb);
+	  };
 
 	  css2rgb = function(css) {
 	    var aa, ab, hsl, i, m, o, rgb, w;
@@ -2282,7 +2512,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  };
 
 	  _guess_formats.push({
-	    p: 20,
+	    p: 5,
 	    test: function(n) {
 	      if (arguments.length === 1 && (w3cx11[n] != null)) {
 	        return 'named';
@@ -2329,7 +2559,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    l = args[0], c = args[1], h = args[2];
 	    ref = lch2lab(l, c, h), L = ref[0], a = ref[1], b = ref[2];
 	    ref1 = lab2rgb(L, a, b), r = ref1[0], g = ref1[1], b = ref1[2];
-	    return [limit(r, 0, 255), limit(g, 0, 255), limit(b, 0, 255), args.length > 3 ? args[3] : 1];
+	    return [r, g, b, args.length > 3 ? args[3] : 1];
 	  };
 
 	  lab2lch = function() {
@@ -2403,9 +2633,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    if (k === 1) {
 	      return [0, 0, 0, alpha];
 	    }
-	    r = c >= 1 ? 0 : round(255 * (1 - c) * (1 - k));
-	    g = m >= 1 ? 0 : round(255 * (1 - m) * (1 - k));
-	    b = y >= 1 ? 0 : round(255 * (1 - y) * (1 - k));
+	    r = c >= 1 ? 0 : 255 * (1 - c) * (1 - k);
+	    g = m >= 1 ? 0 : 255 * (1 - m) * (1 - k);
+	    b = y >= 1 ? 0 : 255 * (1 - y) * (1 - k);
 	    return [r, g, b, alpha];
 	  };
 
@@ -2475,52 +2705,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  };
 
-	  _interpolators = [];
-
-	  interpolate = function(col1, col2, f, m) {
-	    var interpol, len, o, res;
-	    if (f == null) {
-	      f = 0.5;
-	    }
-	    if (m == null) {
-	      m = 'rgb';
-	    }
-
-	    /*
-	    interpolates between colors
-	    f = 0 --> me
-	    f = 1 --> col
-	     */
-	    if (type(col1) !== 'object') {
-	      col1 = chroma(col1);
-	    }
-	    if (type(col2) !== 'object') {
-	      col2 = chroma(col2);
-	    }
-	    for (o = 0, len = _interpolators.length; o < len; o++) {
-	      interpol = _interpolators[o];
-	      if (m === interpol[0]) {
-	        res = interpol[1](col1, col2, f, m);
-	        break;
-	      }
-	    }
-	    if (res == null) {
-	      throw "color mode " + m + " is not supported";
-	    }
-	    res.alpha(col1.alpha() + f * (col2.alpha() - col1.alpha()));
-	    return res;
-	  };
-
-	  chroma.interpolate = interpolate;
-
-	  Color.prototype.interpolate = function(col2, f, m) {
-	    return interpolate(this, col2, f, m);
-	  };
-
-	  chroma.mix = interpolate;
-
-	  Color.prototype.mix = Color.prototype.interpolate;
-
 	  interpolate_rgb = function(col1, col2, f, m) {
 	    var xyz0, xyz1;
 	    xyz0 = col1._rgb;
@@ -2531,18 +2715,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	  _interpolators.push(['rgb', interpolate_rgb]);
 
 	  Color.prototype.luminance = function(lum, mode) {
-	    var cur_lum, eps, max_iter, test;
+	    var cur_lum, eps, max_iter, rgba, test;
 	    if (mode == null) {
 	      mode = 'rgb';
 	    }
 	    if (!arguments.length) {
 	      return rgb2luminance(this._rgb);
 	    }
+	    rgba = this._rgb;
 	    if (lum === 0) {
-	      this._rgb = [0, 0, 0, this._rgb[3]];
+	      rgba = [0, 0, 0, this._rgb[3]];
 	    } else if (lum === 1) {
-	      this._rgb = [255, 255, 255, this._rgb[3]];
+	      rgba = [255, 255, 255, this[3]];
 	    } else {
+	      cur_lum = rgb2luminance(this._rgb);
 	      eps = 1e-7;
 	      max_iter = 20;
 	      test = function(l, h) {
@@ -2557,10 +2743,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	        return test(m, h);
 	      };
-	      cur_lum = rgb2luminance(this._rgb);
-	      this._rgb = (cur_lum > lum ? test(chroma('black'), this) : test(this, chroma('white'))).rgba();
+	      if (cur_lum > lum) {
+	        rgba = test(chroma('black'), this).rgba();
+	      } else {
+	        rgba = test(this, chroma('white')).rgba();
+	      }
 	    }
-	    return this;
+	    return chroma(rgba).alpha(this.alpha());
 	  };
 
 	  temperature2rgb = function(kelvin) {
@@ -2575,7 +2764,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      g = 325.4494125711974 + 0.07943456536662342 * (g = temp - 50) - 28.0852963507957 * log(g);
 	      b = 255;
 	    }
-	    return clip_rgb([r, g, b]);
+	    return [r, g, b];
 	  };
 
 	  rgb2temperature = function() {
@@ -2629,6 +2818,69 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  };
 
+	  chroma.distance = function(a, b, mode) {
+	    var d, i, l1, l2, ref, ref1, sum_sq;
+	    if (mode == null) {
+	      mode = 'lab';
+	    }
+	    if ((ref = type(a)) === 'string' || ref === 'number') {
+	      a = new Color(a);
+	    }
+	    if ((ref1 = type(b)) === 'string' || ref1 === 'number') {
+	      b = new Color(b);
+	    }
+	    l1 = a.get(mode);
+	    l2 = b.get(mode);
+	    sum_sq = 0;
+	    for (i in l1) {
+	      d = (l1[i] || 0) - (l2[i] || 0);
+	      sum_sq += d * d;
+	    }
+	    return Math.sqrt(sum_sq);
+	  };
+
+	  chroma.deltaE = function(a, b, L, C) {
+	    var L1, L2, a1, a2, b1, b2, c1, c2, c4, dH2, delA, delB, delC, delL, f, h1, ref, ref1, ref2, ref3, sc, sh, sl, t, v1, v2, v3;
+	    if (L == null) {
+	      L = 1;
+	    }
+	    if (C == null) {
+	      C = 1;
+	    }
+	    if ((ref = type(a)) === 'string' || ref === 'number') {
+	      a = new Color(a);
+	    }
+	    if ((ref1 = type(b)) === 'string' || ref1 === 'number') {
+	      b = new Color(b);
+	    }
+	    ref2 = a.lab(), L1 = ref2[0], a1 = ref2[1], b1 = ref2[2];
+	    ref3 = b.lab(), L2 = ref3[0], a2 = ref3[1], b2 = ref3[2];
+	    c1 = sqrt(a1 * a1 + b1 * b1);
+	    c2 = sqrt(a2 * a2 + b2 * b2);
+	    sl = L1 < 16.0 ? 0.511 : (0.040975 * L1) / (1.0 + 0.01765 * L1);
+	    sc = (0.0638 * c1) / (1.0 + 0.0131 * c1) + 0.638;
+	    h1 = c1 < 0.000001 ? 0.0 : (atan2(b1, a1) * 180.0) / PI;
+	    while (h1 < 0) {
+	      h1 += 360;
+	    }
+	    while (h1 >= 360) {
+	      h1 -= 360;
+	    }
+	    t = (h1 >= 164.0) && (h1 <= 345.0) ? 0.56 + abs(0.2 * cos((PI * (h1 + 168.0)) / 180.0)) : 0.36 + abs(0.4 * cos((PI * (h1 + 35.0)) / 180.0));
+	    c4 = c1 * c1 * c1 * c1;
+	    f = sqrt(c4 / (c4 + 1900.0));
+	    sh = sc * (f * t + 1.0 - f);
+	    delL = L1 - L2;
+	    delC = c1 - c2;
+	    delA = a1 - a2;
+	    delB = b1 - b2;
+	    dH2 = delA * delA + delB * delB - delC * delC;
+	    v1 = delL / (L * sl);
+	    v2 = delC / (C * sc);
+	    v3 = sh;
+	    return sqrt(v1 * v1 + v2 * v2 + (dH2 / (v3 * v3)));
+	  };
+
 	  Color.prototype.get = function(modechan) {
 	    var channel, i, me, mode, ref, src;
 	    me = this;
@@ -2680,8 +2932,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	    } else {
 	      src = value;
 	    }
-	    me._rgb = chroma(src, mode).alpha(me.alpha())._rgb;
-	    return me;
+	    return chroma(src, mode).alpha(me.alpha());
+	  };
+
+	  Color.prototype.clipped = function() {
+	    return this._rgb._clipped || false;
+	  };
+
+	  Color.prototype.alpha = function(a) {
+	    if (arguments.length) {
+	      return chroma.rgb([this._rgb[0], this._rgb[1], this._rgb[2], a]);
+	    }
+	    return this._rgb[3];
 	  };
 
 	  Color.prototype.darken = function(amount) {
@@ -2862,7 +3124,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  };
 
 	  chroma.scale = function(colors, positions) {
-	    var _classes, _colorCache, _colors, _correctLightness, _domain, _fixed, _max, _min, _mode, _nacol, _out, _padding, _pos, _spread, classifyValue, f, getClass, getColor, resetCache, setColors, tmap;
+	    var _classes, _colorCache, _colors, _correctLightness, _domain, _fixed, _gamma, _max, _min, _mode, _nacol, _out, _padding, _pos, _spread, _useCache, classifyValue, f, getClass, getColor, resetCache, setColors, tmap;
 	    _mode = 'rgb';
 	    _nacol = chroma('#ccc');
 	    _spread = 0;
@@ -2877,24 +3139,26 @@ return /******/ (function(modules) { // webpackBootstrap
 	    _max = 1;
 	    _correctLightness = false;
 	    _colorCache = {};
+	    _useCache = true;
+	    _gamma = 1;
 	    setColors = function(colors) {
-	      var c, col, o, ref, ref1, ref2, w;
+	      var c, col, o, ref, ref1, w;
 	      if (colors == null) {
 	        colors = ['#fff', '#000'];
 	      }
-	      if ((colors != null) && type(colors) === 'string' && (((ref = chroma.brewer) != null ? ref[colors] : void 0) != null)) {
-	        colors = chroma.brewer[colors];
+	      if ((colors != null) && type(colors) === 'string' && (chroma.brewer != null)) {
+	        colors = chroma.brewer[colors] || chroma.brewer[colors.toLowerCase()] || colors;
 	      }
 	      if (type(colors) === 'array') {
 	        colors = colors.slice(0);
-	        for (c = o = 0, ref1 = colors.length - 1; 0 <= ref1 ? o <= ref1 : o >= ref1; c = 0 <= ref1 ? ++o : --o) {
+	        for (c = o = 0, ref = colors.length - 1; 0 <= ref ? o <= ref : o >= ref; c = 0 <= ref ? ++o : --o) {
 	          col = colors[c];
 	          if (type(col) === "string") {
 	            colors[c] = chroma(col);
 	          }
 	        }
 	        _pos.length = 0;
-	        for (c = w = 0, ref2 = colors.length - 1; 0 <= ref2 ? w <= ref2 : w >= ref2; c = 0 <= ref2 ? ++w : --w) {
+	        for (c = w = 0, ref1 = colors.length - 1; 0 <= ref1 ? w <= ref1 : w >= ref1; c = 0 <= ref1 ? ++w : --w) {
 	          _pos.push(c / (colors.length - 1));
 	        }
 	      }
@@ -2940,11 +3204,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	        if (_classes && _classes.length > 2) {
 	          c = getClass(val);
 	          t = c / (_classes.length - 2);
-	          t = _padding[0] + (t * (1 - _padding[0] - _padding[1]));
 	        } else if (_max !== _min) {
 	          t = (val - _min) / (_max - _min);
-	          t = _padding[0] + (t * (1 - _padding[0] - _padding[1]));
-	          t = Math.min(1, Math.max(0, t));
 	        } else {
 	          t = 1;
 	        }
@@ -2954,8 +3215,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	      if (!bypassMap) {
 	        t = tmap(t);
 	      }
+	      if (_gamma !== 1) {
+	        t = pow(t, _gamma);
+	      }
+	      t = _padding[0] + (t * (1 - _padding[0] - _padding[1]));
+	      t = Math.min(1, Math.max(0, t));
 	      k = Math.floor(t * 10000);
-	      if (_colorCache[k]) {
+	      if (_useCache && _colorCache[k]) {
 	        col = _colorCache[k];
 	      } else {
 	        if (type(_colors) === 'array') {
@@ -2978,7 +3244,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	        } else if (type(_colors) === 'function') {
 	          col = _colors(t);
 	        }
-	        _colorCache[k] = col;
+	        if (_useCache) {
+	          _colorCache[k] = col;
+	        }
 	      }
 	      return col;
 	    };
@@ -3112,43 +3380,62 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return _padding;
 	      }
 	    };
-	    f.colors = function() {
-	      var dd, dm, i, numColors, o, out, ref, results, samples, w;
-	      numColors = 0;
-	      out = 'hex';
-	      if (arguments.length === 1) {
-	        if (type(arguments[0]) === 'string') {
-	          out = arguments[0];
-	        } else {
-	          numColors = arguments[0];
-	        }
+	    f.colors = function(numColors, out) {
+	      var dd, dm, i, o, ref, result, results, samples, w;
+	      if (arguments.length < 2) {
+	        out = 'hex';
 	      }
-	      if (arguments.length === 2) {
-	        numColors = arguments[0], out = arguments[1];
-	      }
-	      if (numColors) {
+	      result = [];
+	      if (arguments.length === 0) {
+	        result = _colors.slice(0);
+	      } else if (numColors === 1) {
+	        result = [f(0.5)];
+	      } else if (numColors > 1) {
 	        dm = _domain[0];
 	        dd = _domain[1] - dm;
-	        return (function() {
+	        result = (function() {
 	          results = [];
 	          for (var o = 0; 0 <= numColors ? o < numColors : o > numColors; 0 <= numColors ? o++ : o--){ results.push(o); }
 	          return results;
 	        }).apply(this).map(function(i) {
-	          return f(dm + i / (numColors - 1) * dd)[out]();
+	          return f(dm + i / (numColors - 1) * dd);
+	        });
+	      } else {
+	        colors = [];
+	        samples = [];
+	        if (_classes && _classes.length > 2) {
+	          for (i = w = 1, ref = _classes.length; 1 <= ref ? w < ref : w > ref; i = 1 <= ref ? ++w : --w) {
+	            samples.push((_classes[i - 1] + _classes[i]) * 0.5);
+	          }
+	        } else {
+	          samples = _domain;
+	        }
+	        result = samples.map(function(v) {
+	          return f(v);
 	        });
 	      }
-	      colors = [];
-	      samples = [];
-	      if (_classes && _classes.length > 2) {
-	        for (i = w = 1, ref = _classes.length; 1 <= ref ? w < ref : w > ref; i = 1 <= ref ? ++w : --w) {
-	          samples.push((_classes[i - 1] + _classes[i]) * 0.5);
-	        }
-	      } else {
-	        samples = _domain;
+	      if (chroma[out]) {
+	        result = result.map(function(c) {
+	          return c[out]();
+	        });
 	      }
-	      return samples.map(function(v) {
-	        return f(v)[out]();
-	      });
+	      return result;
+	    };
+	    f.cache = function(c) {
+	      if (c != null) {
+	        _useCache = c;
+	        return f;
+	      } else {
+	        return _useCache;
+	      }
+	    };
+	    f.gamma = function(g) {
+	      if (g != null) {
+	        _gamma = g;
+	        return f;
+	      } else {
+	        return _gamma;
+	      }
 	    };
 	    return f;
 	  };
@@ -3222,7 +3509,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  };
 
 	  chroma.limits = function(data, mode, num) {
-	    var aa, ab, ac, ad, ae, af, ag, ah, ai, aj, ak, al, am, assignments, best, centroids, cluster, clusterSizes, dist, i, j, kClusters, limits, max_log, min, min_log, mindist, n, nb_iters, newCentroids, o, p, pb, pr, ref, ref1, ref10, ref11, ref12, ref13, ref14, ref2, ref3, ref4, ref5, ref6, ref7, ref8, ref9, repeat, sum, tmpKMeansBreaks, value, values, w;
+	    var aa, ab, ac, ad, ae, af, ag, ah, ai, aj, ak, al, am, assignments, best, centroids, cluster, clusterSizes, dist, i, j, kClusters, limits, max_log, min, min_log, mindist, n, nb_iters, newCentroids, o, p, pb, pr, ref, ref1, ref10, ref11, ref12, ref13, ref14, ref2, ref3, ref4, ref5, ref6, ref7, ref8, ref9, repeat, sum, tmpKMeansBreaks, v, value, values, w;
 	    if (mode == null) {
 	      mode = 'equal';
 	    }
@@ -3238,6 +3525,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    values = data.values.sort(function(a, b) {
 	      return a - b;
 	    });
+	    if (num === 1) {
+	      return [min, max];
+	    }
 	    limits = [];
 	    if (mode.substr(0, 1) === 'c') {
 	      limits.push(min);
@@ -3263,13 +3553,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    } else if (mode.substr(0, 1) === 'q') {
 	      limits.push(min);
 	      for (i = aa = 1, ref2 = num - 1; 1 <= ref2 ? aa <= ref2 : aa >= ref2; i = 1 <= ref2 ? ++aa : --aa) {
-	        p = values.length * i / num;
+	        p = (values.length - 1) * i / num;
 	        pb = floor(p);
 	        if (pb === p) {
 	          limits.push(values[pb]);
 	        } else {
 	          pr = p - pb;
-	          limits.push(values[pb] * pr + values[pb + 1] * (1 - pr));
+	          limits.push(values[pb] * (1 - pr) + values[pb + 1] * pr);
 	        }
 	      }
 	      limits.push(max);
@@ -3355,8 +3645,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	      });
 	      limits.push(tmpKMeansBreaks[0]);
 	      for (i = am = 1, ref14 = tmpKMeansBreaks.length - 1; am <= ref14; i = am += 2) {
-	        if (!isNaN(tmpKMeansBreaks[i])) {
-	          limits.push(tmpKMeansBreaks[i]);
+	        v = tmpKMeansBreaks[i];
+	        if (!isNaN(v) && limits.indexOf(v) === -1) {
+	          limits.push(v);
 	        }
 	      }
 	    }
@@ -3372,6 +3663,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var args, b, g, r;
 	    args = unpack(arguments);
 	    h = args[0], s = args[1], i = args[2];
+	    if (isNaN(h)) {
+	      h = 0;
+	    }
 	    h /= 360;
 	    if (h < 1 / 3) {
 	      b = (1 - s) / 3;
@@ -3445,6 +3739,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    } else if (m === 'hsv') {
 	      xyz0 = col1.hsv();
 	      xyz1 = col2.hsv();
+	    } else if (m === 'hcg') {
+	      xyz0 = col1.hcg();
+	      xyz1 = col2.hcg();
 	    } else if (m === 'hsi') {
 	      xyz0 = col1.hsi();
 	      xyz1 = col2.hsi();
@@ -3488,7 +3785,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  _interpolators = _interpolators.concat((function() {
 	    var len, o, ref, results;
-	    ref = ['hsv', 'hsl', 'hsi', 'hcl', 'lch'];
+	    ref = ['hsv', 'hsl', 'hsi', 'hcl', 'lch', 'hcg'];
 	    results = [];
 	    for (o = 0, len = ref.length; o < len; o++) {
 	      m = ref[o];
@@ -3519,9 +3816,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(26)(module)))
 
-/***/ },
+/***/ }),
 /* 26 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = function(module) {
 		if(!module.webpackPolyfill) {
@@ -3535,7 +3832,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 
-/***/ }
+/***/ })
 /******/ ])
 });
 ;
