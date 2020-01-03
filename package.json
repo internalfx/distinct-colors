@@ -1,6 +1,6 @@
 {
   "name": "distinct-colors",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "description": "Generate a palette of visually distinct colors. It's great for charts.",
   "main": "./dist/distinct-colors.js",
   "scripts": {
@@ -28,12 +28,12 @@
     "mout": "^1.2.2"
   },
   "devDependencies": {
-    "babel-loader": "^8.0.6",
-    "@babel/preset-env": "^7.7.7",
     "@babel/core": "^7.7.7",
     "@babel/plugin-transform-modules-commonjs": "^7.7.5",
+    "@babel/preset-env": "^7.7.7",
     "@babel/register": "^7.7.7",
     "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
     "chai": "^4.2.0",
     "eslint": "^6.8.0",
     "eslint-config-standard": "^14.1.0",
