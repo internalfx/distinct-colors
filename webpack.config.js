@@ -1,26 +1,31 @@
 
-var config = {
-  cache: true,
-  context: __dirname + '/src',
-  entry: './index.es6',
+const path = require('path')
+
+const config = {
+  mode: 'development',
+  entry: {
+    index: path.resolve(__dirname, 'src', 'index.js')
+  },
   output: {
-    path: __dirname + '/dist',
-    filename: 'distinct-colors.js',
-    libraryTarget: 'umd',
-    library: 'DistinctColors'
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'distinct-colors.js'
   },
   module: {
-    preLoaders: [
+    rules: [
       {
-        test: /\.es6$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader'
+        test: /\.js$/,
+        exclude: /(node_modules)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
       }
     ]
   },
-  resolve: {
-    extensions: ['', '.js', '.es6', '.json']
-  }
+  plugins: [],
+  resolve: {}
 }
 
 module.exports = config
