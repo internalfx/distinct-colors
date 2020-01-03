@@ -43,18 +43,6 @@ var palette = distinctColors() // You may pass an optional config object
 // Thats it!
 ```
 
-## Using in Browser
-
-You can also use this library directly from your browser.
-
-```javascript
-
-      <script src="dist/distinct-colors.min.js"></script>
-      var number_of_colors = 6;
-      var palette = new DistinctColors({count: number_of_colors});
-
-```
-
 ## API
 
 #### distinctColors([options])
