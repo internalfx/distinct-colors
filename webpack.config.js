@@ -2,12 +2,14 @@
 const path = require('path')
 
 const config = {
-  mode: 'development',
+  mode: 'production',
   entry: {
     index: path.resolve(__dirname, 'src', 'index.js')
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
+    library: 'distinct-colors',
+    libraryTarget: 'umd',
     filename: 'distinct-colors.js'
   },
   module: {
