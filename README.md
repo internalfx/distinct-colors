@@ -36,7 +36,11 @@ npm install distinct-colors
 ## Getting Started
 
 ```javascript
-var distinctColors = require('distinct-colors')
+// ESM
+import distinctColors from 'distinct-colors'
+
+// CommonJS
+var distinctColors = require('distinct-colors').default
 
 var palette = distinctColors() // You may pass an optional config object
 
