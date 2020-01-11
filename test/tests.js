@@ -1,5 +1,5 @@
 
-import DC from '../src'
+import DC from '../src/index.js'
 
 /* global describe, it */
 

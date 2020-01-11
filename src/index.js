@@ -4,7 +4,7 @@ import deepClone from 'mout/lang/deepClone'
 import deepEquals from 'mout/lang/deepEquals'
 import chroma from 'chroma-js'
 
-var defaults = {
+const defaults = {
   count: 5,
   hueMin: 0,
   hueMax: 360,
@@ -16,7 +16,7 @@ var defaults = {
   samples: 800
 }
 
-var checkColor = function (lab, options) {
+const checkColor = function (lab, options) {
   const color = chroma.lab(lab)
   const hcl = color.hcl()
   const rgb = color.rgb()
@@ -39,9 +39,9 @@ var checkColor = function (lab, options) {
   )
 }
 
-var sortByContrast = function (colorList) {
-  var unsortedColors = colorList.slice(0)
-  var sortedColors = [unsortedColors.shift()]
+const sortByContrast = function (colorList) {
+  const unsortedColors = colorList.slice(0)
+  const sortedColors = [unsortedColors.shift()]
   while (unsortedColors.length > 0) {
     const lastColor = sortedColors[sortedColors.length - 1]
     let nearest = 0
@@ -62,8 +62,8 @@ var sortByContrast = function (colorList) {
   return sortedColors
 }
 
-var distinctColors = function (opts = {}) {
-  var options = { ...defaults, ...opts }
+const distinctColors = function (opts = {}) {
+  const options = { ...defaults, ...opts }
 
   if (options.count <= 0) { return [] }
 
@@ -71,16 +71,16 @@ var distinctColors = function (opts = {}) {
     options.samples = options.count * 5
   }
 
-  var colors = []
-  var zonesProto = []
-  var samples = new Set()
+  let colors = []
+  const zonesProto = []
+  let samples = new Set()
 
-  var rangeDivider = Math.cbrt(options.samples)
+  let rangeDivider = Math.cbrt(options.samples)
   rangeDivider *= 1.001
 
-  var hStep = (options.hueMax - options.hueMin) / rangeDivider
-  var cStep = (options.chromaMax - options.chromaMin) / rangeDivider
-  var lStep = (options.lightMax - options.lightMin) / rangeDivider
+  const hStep = (options.hueMax - options.hueMin) / rangeDivider
+  const cStep = (options.chromaMax - options.chromaMin) / rangeDivider
+  const lStep = (options.lightMax - options.lightMin) / rangeDivider
 
   if (hStep <= 0) { throw new Error('hueMax must be greater than hueMin!') }
   if (cStep <= 0) { throw new Error('chromaMax must be greater than chromaMin!') }
