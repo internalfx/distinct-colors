@@ -3,6 +3,7 @@
   "version": "2.1.0",
   "description": "Generate a palette of visually distinct colors. It's great for charts.",
   "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "scripts": {
     "test": "mocha"
   },
@@ -23,6 +24,7 @@
   },
   "homepage": "https://github.com/internalfx/distinct-colors#readme",
   "dependencies": {
+    "@types/chroma-js": "^2.0.0",
     "chroma-js": "^2.1.0",
     "mout": "^1.2.2"
   },
