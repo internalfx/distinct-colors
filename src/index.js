@@ -115,6 +115,9 @@ const distinctColors = function (opts = {}) {
   for (let step = 1; step <= options.quality; step++) {
     const zones = deepClone(zonesProto)
 
+    // push the colors into sample to make sure at least one color in the slot
+    samples.push(...colors)
+
     // Find closest color for each sample
     for (let i = 0; i < samples.length; i++) {
       let minDist = Number.MAX_SAFE_INTEGER
@@ -134,6 +137,9 @@ const distinctColors = function (opts = {}) {
       }
       zones[nearest].push(samples[i])
     }
+
+    // remove the slot keeper
+    samples.splice(samples.length - colors.length)
 
     const lastColors = deepClone(colors)
 

@@ -17,6 +17,13 @@ describe('DistinctColors', function () {
     assert.ok(DC({ count: 40, lightMin: 90, samples: 10, quality: 10 }))
   })
 
+  it('Should work for all counts from 1 - 100', function () {
+    this.timeout(4000)
+    for (let i = 1; i <= 100; ++i) {
+      assert.ok(DC({ count: i, quality: 5 }))
+    }
+  })
+
   it('Should throw error if min is >= max.', function () {
     assert.throws(function () {
       DC({ count: 26, lightMin: 90, lightMax: 90 })
