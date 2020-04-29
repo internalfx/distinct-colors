@@ -22,4 +22,10 @@ describe('DistinctColors', function () {
       DC({ count: 26, lightMin: 90, lightMax: 90 })
     }, 'lightMax must be greater than lightMin!')
   })
+
+  for (let i = 1; i <= 100; i += 1) {
+    it(`Should work if {count:${i}}.`, function () {
+      assert.ok(DC({ count: i, samples: 10 }))
+    })
+  }
 })
