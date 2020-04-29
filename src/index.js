@@ -16,6 +16,25 @@ const defaults = {
   samples: 800
 }
 
+const getClosestIndex = function (colors, color) {
+  let minDist = Number.MAX_SAFE_INTEGER
+  let nearest = 0
+  for (let idx = 0; idx < colors.length; idx += 1) {
+    const sample = colors[idx]
+    const dist = Math.sqrt(
+      Math.pow(Math.abs(sample[0] - color[0]), 2) +
+      Math.pow(Math.abs(sample[1] - color[1]), 2) +
+      Math.pow(Math.abs(sample[2] - color[2]), 2)
+    )
+    if (dist < minDist) {
+      minDist = dist
+      nearest = idx
+    }
+  }
+
+  return nearest
+}
+
 const checkColor = function (lab, options) {
   const color = chroma.lab(lab)
   const hcl = color.hcl()
@@ -46,7 +65,7 @@ const sortByContrast = function (colorList) {
     const lastColor = sortedColors[sortedColors.length - 1]
     let nearest = 0
     let maxDist = Number.MIN_SAFE_INTEGER
-    for (let i = 0; i < unsortedColors.length; i++) {
+    for (let i = 0; i < unsortedColors.length; i += 1) {
       const dist = Math.sqrt(
         Math.pow(Math.abs(lastColor[0] - unsortedColors[i][0]), 2) +
         Math.pow(Math.abs(lastColor[1] - unsortedColors[i][1]), 2) +
@@ -67,16 +86,15 @@ const distinctColors = function (opts = {}) {
 
   if (options.count <= 0) { return [] }
 
-  if (options.samples < options.count * 5) {
-    options.samples = options.count * 5
+  if (options.samples < options.count * 3) {
+    options.samples = Math.ceil(options.count * 3)
   }
 
   let colors = []
   const zonesProto = []
   let samples = new Set()
 
-  let rangeDivider = Math.cbrt(options.samples)
-  rangeDivider *= 1.001
+  const rangeDivider = Math.ceil(Math.cbrt(options.samples))
 
   const hStep = (options.hueMax - options.hueMin) / rangeDivider
   const cStep = (options.chromaMax - options.chromaMin) / rangeDivider
@@ -86,9 +104,9 @@ const distinctColors = function (opts = {}) {
   if (cStep <= 0) { throw new Error('chromaMax must be greater than chromaMin!') }
   if (lStep <= 0) { throw new Error('lightMax must be greater than lightMin!') }
 
-  for (let h = options.hueMin; h <= options.hueMax; h += hStep) {
-    for (let c = options.chromaMin; c <= options.chromaMax; c += cStep) {
-      for (let l = options.lightMin; l <= options.lightMax; l += lStep) {
+  for (let h = options.hueMin + hStep / 2; h <= options.hueMax; h += hStep) {
+    for (let c = options.chromaMin + cStep / 2; c <= options.chromaMax; c += cStep) {
+      for (let l = options.lightMin + lStep / 2; l <= options.lightMax; l += lStep) {
         const color = chroma.hcl(h, c, l).lab()
         if (checkColor(color, options)) {
           samples.add(color.toString())
@@ -112,32 +130,27 @@ const distinctColors = function (opts = {}) {
     if (colors.length >= options.count) { break }
   }
 
-  for (let step = 1; step <= options.quality; step++) {
+  for (let step = 1; step <= options.quality; step += 1) {
     const zones = deepClone(zonesProto)
+    const sampleList = deepClone(samples)
 
-    // Find closest color for each sample
-    for (let i = 0; i < samples.length; i++) {
-      let minDist = Number.MAX_SAFE_INTEGER
-      let nearest = 0
+    // Immediately add the closest sample for each color
+    for (let i = 0; i < colors.length; i += 1) {
+      const idx = getClosestIndex(sampleList, colors[i])
+      zones[i].push(sampleList[idx])
+      sampleList.splice(idx, 1)
+    }
+
+    // Find closest color for each remaining sample
+    for (let i = 0; i < sampleList.length; i += 1) {
       const sample = samples[i]
-      for (let j = 0; j < colors.length; j++) {
-        const color = colors[j]
-        const dist = Math.sqrt(
-          Math.pow(Math.abs(sample[0] - color[0]), 2) +
-          Math.pow(Math.abs(sample[1] - color[1]), 2) +
-          Math.pow(Math.abs(sample[2] - color[2]), 2)
-        )
-        if (dist < minDist) {
-          minDist = dist
-          nearest = j
-        }
-      }
+      const nearest = getClosestIndex(colors, sample)
       zones[nearest].push(samples[i])
     }
 
     const lastColors = deepClone(colors)
 
-    for (let i = 0; i < zones.length; i++) {
+    for (let i = 0; i < zones.length; i += 1) {
       const zone = zones[i]
       const size = zone.length
       const Ls = []
